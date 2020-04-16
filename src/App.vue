@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app style="background-color:#F4F5F8">
     <v-app-bar
       app
       color="#A51931"
@@ -41,6 +41,7 @@
     <v-footer
       color="#A51931"
       padless
+      app
     >
       <v-row
         justify="center"

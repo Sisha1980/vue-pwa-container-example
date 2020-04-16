@@ -1,25 +1,32 @@
 <template>
-  <v-card>
-    <v-tabs
-      v-model="activeTab"
-      background-color="#F4F5F8"
-      centered
-      light
-      icons-and-text
-    >
-      <v-tabs-slider>
-      </v-tabs-slider>
+  <v-container 
+    fluid
+    pa-0
+    ma-0
+    background-color="#F4F5F8"
+  >
+      <v-tabs
+        v-model="activeTab"
+        background-color="#F4F5F8"
+        centered
+        light
+        icons-and-text
+      >
+        <v-tabs-slider>
+        </v-tabs-slider>
 
-      <v-tab v-for="tab of tabs" :key="tab.id" :to="tab.route" exact>
-        {{ tab.name }}
-        <v-icon> {{ tab.icon }} </v-icon>
-      </v-tab>
+        <v-tab v-for="tab of tabs" :key="tab.id" :to="tab.route" exact>
+          {{ tab.name }}
+          <v-icon> {{ tab.icon }} </v-icon>
+        </v-tab>
 
-      <v-tab-item v-for="tab of tabs" :key="tab.id" :value="tab.route">
-        <router-view></router-view>
-      </v-tab-item>
-    </v-tabs>
-  </v-card>
+      </v-tabs>
+      <v-tabs-items v-model="activeTab">
+        <v-tab-item v-for="tab of tabs" :key="tab.id" :value="tab.route">
+          <router-view></router-view>
+        </v-tab-item>
+      </v-tabs-items>
+  </v-container>
 </template>
 
 <script>
